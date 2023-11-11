@@ -3,6 +3,7 @@ package domain
 //Server Side logic
 
 import (
+	"github.com/Surender-Kumar-1996/sample_banking/errs"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -11,7 +12,7 @@ type CustomerRepositoryStub struct {
 	customer []Customer
 }
 
-func (s CustomerRepositoryStub) FindAll() ([]Customer, error) {
+func (s CustomerRepositoryStub) FindAll() ([]Customer, *errs.AppError) {
 	return s.customer, nil
 }
 
